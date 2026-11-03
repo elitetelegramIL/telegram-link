@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080c18">
+<title>מעבר לטלגרם</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100svh;
+ display:grid;place-items:center;
+ overflow:hidden;
+ background:radial-gradient(ellipse at center,
+ #1b3655 0%,#080e1c 60%,#03050b 100%);
+ font-family:Arial,sans-serif;
+ color:white;text-align:center;
+}
+.stars{
+ position:fixed;inset:0;
+ background-image:
+ radial-gradient(#eacb8a 1px,transparent 1px),
+ radial-gradient(#7bbaff 1px,transparent 1px);
+ background-size:73px 89px,113px 127px;
+ opacity:.3;
+ animation:stars 20s linear infinite;
+}
+.card{
+ position:relative;z-index:1;
+ padding:30px 20px;width:100%;
+ max-width:450px;
+}
+.logo{
+ width:180px;height:180px;
+ margin:0 auto 35px;
+ display:grid;place-items:center;
+ border-radius:50%;
+ background:linear-gradient(135deg,#36b9f3,#1687c8);
+ box-shadow:0 0 35px #229ed988,
+ 0 0 90px #229ed944;
+ animation:float 3s ease-in-out infinite,
+ glow 2s ease-in-out infinite alternate;
+}
+.logo svg{width:110px;height:110px;fill:white}
+h1{
+ font-size:clamp(27px,6vw,36px);
+ text-shadow:0 0 20px #d4ad6380;
+}
+p{font-size:18px;line-height:1.9;color:#bdc9dd}
+.gold{color:#f0cc80}
+.bar{
+ height:5px;width:75%;
+ margin:30px auto;
+ background:#263246;border-radius:8px;
+ overflow:hidden;
+}
+.bar:before{
+ content:"";display:block;height:100%;
+ background:linear-gradient(90deg,#65c7ff,#f4c873);
+ animation:load 3s linear forwards;
+}
+.button{
+ display:inline-block;
+ padding:19px 40px;
+ border-radius:16px;
+ background:linear-gradient(120deg,
+ #b88437,#ffe19b,#b88437);
+ color:#12131b;text-decoration:none;
+ font-size:21px;font-weight:bold;
+ box-shadow:0 0 30px #cfa45a66;
+}
+@keyframes float{
+ 50%{transform:translateY(-13px)}
+}
+@keyframes glow{
+ to{box-shadow:0 0 65px #229ed9aa,
+ 0 0 120px #229ed966}
+}
+@keyframes load{
+ from{width:0}to{width:100%}
+}
+@keyframes stars{
+ to{background-position:73px 89px,-113px 127px}
+}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<main class="card">
+ <div class="logo">
+  <svg viewBox="0 0 24 24" aria-label="Telegram">
+   <path d="M21.5 3.5 2.8 10.8c-1.3.5-1.3 1.3-.2 1.6l4.8 1.5 1.8 5.5c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.5.3 1.7-.9l3.1-14.7c.3-1.4-.5-2-1.7-1.5ZM8.1 13.6 19.2 6.5c.5-.3 1-.1.6.3l-9.2 8.3-.4 3.5-2.1-5Z"/>
+  </svg>
+ </div>
+ <h1>מעבירים אותך לטלגרם...</h1>
+ <p>
+ המעבר יתבצע
+ <span class="gold">אוטומטית</span>
+ בעוד רגע.
+ <br>
+ אם לא נפתח, לחץ על הכפתור.
+ </p>
+ <div class="bar"></div>
+ <a class="button" id="open"
+ href="https://t.me/m/ylVrN-0sYzMx">
+ ✈️ פתח בטלגרם
+ </a>
+</main>
+<script>
+const target="https://t.me/m/ylVrN-0sYzMx";
+setTimeout(()=>{
+ window.location.href=target;
+},3000);
+</script>
+</body>
+</html>
